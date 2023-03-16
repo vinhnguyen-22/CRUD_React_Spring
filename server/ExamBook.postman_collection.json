@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "d697a6ca-ed08-42d4-aa81-80fba16940e6",
+		"name": "ExamBook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"nhanvo@admin.com\",\n\t\"password\":\"nhanvo\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/user/authenticate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"user",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all books",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaGFudm9AYWRtaW4uY29tIiwiYXV0aCI6eyJuYW1lIjoiQURNSU4ifSwiaWF0IjoxNjc3MzMwNDIwLCJleHAiOjE2NzczMzA2MDB9.jrn0OXsQbZLLqw5wtJ7r0x2XreVMgmne3Vn70WCSa18",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "pageNumber",
+							"value": "0",
+							"type": "default"
+						},
+						{
+							"key": "pageSize",
+							"value": "10",
+							"type": "default"
+						},
+						{
+							"key": "sortBy",
+							"value": "title",
+							"type": "default"
+						},
+						{
+							"key": "sortDir",
+							"value": "asc",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaGFudm9AYWRtaW4uY29tIiwiYXV0aCI6eyJuYW1lIjoiQURNSU4ifSwiaWF0IjoxNjc3MzMwOTA0LCJleHAiOjE2NzczMzEwODR9.2s13hXm1PuJ-id6LgARYuxFhOzrrTgxRK0l7ffFFIao",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/books/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"11"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaGFudm9AYWRtaW4uY29tIiwiYXV0aCI6eyJuYW1lIjoiQURNSU4ifSwiaWF0IjoxNjc3MzMwNjE5LCJleHAiOjE2NzczMzA3OTl9.6dZ_f80Fvk1agJPgc1O3ISPk9foBPK-6Ict35aq88x8",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t    \"title\": \"Grails in Action\",\n\t    \"author\": \"Glen Smith and Peter Ledbrook\",\n\t    \"coverPhotoURL\": \"https://images.manning.com/720/960/resize/book/6/3e9d5ed-4155-466d-ab46-538bb355948d/gsmith2.png\",\n\t    \"isbnNumber\": 1617290963,\n\t    \"price\": 2907,\n\t    \"language\": \"English\",\n        \"genre\": \"Technology\"\n\t}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaGFudm9AYWRtaW4uY29tIiwiYXV0aCI6eyJuYW1lIjoiQURNSU4ifSwiaWF0IjoxNjc3MzMwOTA0LCJleHAiOjE2NzczMzEwODR9.2s13hXm1PuJ-id6LgARYuxFhOzrrTgxRK0l7ffFFIao",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 11,\n    \"title\": \"Grails in Action\",\n    \"author\": \"Glen Smith and Peter Ledbrook\",\n    \"coverPhotoURL\": \"https://images.manning.com/720/960/resize/book/6/3e9d5ed-4155-466d-ab46-538bb355948d/gsmith2.png\",\n    \"isbnNumber\": 1617290963,\n    \"price\": 2907.0,\n    \"language\": \"Vietnamese\",\n    \"genre\": \"Technology\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaGFudm9AYWRtaW4uY29tIiwiYXV0aCI6eyJuYW1lIjoiQURNSU4ifSwiaWF0IjoxNjc3MzMwOTA0LCJleHAiOjE2NzczMzEwODR9.2s13hXm1PuJ-id6LgARYuxFhOzrrTgxRK0l7ffFFIao",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/books/11",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"11"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find all by search",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuaGFudm9AYWRtaW4uY29tIiwiYXV0aCI6eyJuYW1lIjoiQURNSU4ifSwiaWF0IjoxNjc3MzMxMzMyLCJleHAiOjE2NzczMzE1MTJ9.7DzzoQSVglalpz53Jpom-WpWs6seeCN84no6DUpp3zk",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/books/search/Spring Microservices in Action 6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"books",
+						"search",
+						"Spring Microservices in Action 6"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
