@@ -34,7 +34,7 @@ const LoginPage = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from.pathname || '/profile';
+  const from = location.state?.from.pathname || '/';
   const defaultValues = {
     email: 'nhanvo@admin.com',
     password: 'nhanvo',
